@@ -1,0 +1,58 @@
+<html lang="en"><head>
+		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html; charset=UTF8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#382C2A">
+		<meta name="viewport" content="height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<meta name="robots" content="noindex, nofollow">
+		<title>Plants vs Zombies 1</title>
+		<style>
+			html, body {
+				margin: 0;
+				padding: 0;
+				height: 100%;
+				background: #000;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="game-file" style="width:100%; height:100%"><ruffle-player style="width: 100vw; height: 100vh;"></ruffle-player></div>
+		<script>
+			window.RufflePlayer = window.RufflePlayer || {}
+
+			window.addEventListener('load', () => {
+				const ruffle = window.RufflePlayer.newest()
+				const player = ruffle.createPlayer()
+
+				player.config = {
+					autoplay: 'on',
+					contextMenu: true,
+					unmuteOverlay: 'hidden',
+					backgroundColor: '#000000',
+					upgradeToHttps: window.location.protocol === 'https:',
+					warnOnUnsupportedContent: false,
+					letterbox: 'fullscreen',
+					quality: 'high',
+					scale: 'showAll',
+					preloader: false,
+					forceScale: true,
+					wmode: 'direct',
+					polyfills: true
+				}
+
+				player.style.width = '100vw'
+				// player.style.width = '540px'
+				player.style.height = '100vh'
+				// player.style.height = '405px'
+
+				const container = document.getElementById('game-file')
+				container.appendChild(player)
+
+				player.load('pvz.swf')
+			})
+		</script>
+		<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+	
+</body></html>
